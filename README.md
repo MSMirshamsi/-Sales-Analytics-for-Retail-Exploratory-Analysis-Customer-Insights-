@@ -1,85 +1,73 @@
-# Sales Analytics for Retail — Exploratory Analysis & Customer Insights  
-**Data:** `sales.xlsx` (realistic retail invoices)  
-**Tech stack:** `Python`, `pandas`, `numpy`, `matplotlib`, `seaborn` (Jupyter Notebook)
+# Apple Sales Data Analysis
+
+## Project Overview
+This project is an **end-to-end data analysis case study** based on a transactional sales dataset from **Apple Inc. (simulated)**.  
+The goal is to demonstrate professional **data analytics techniques** using **Python, Pandas, NumPy, Matplotlib, and Seaborn**.
+
+The dataset contains detailed transactional data such as:
+- `InvoiceNumber` → Unique 6-digit invoice (prefix **C** = cancelled order)  
+- `ProductCode` → Unique 5-digit product identifier  
+- `ProductName` → Item description  
+- `Quantity` → Number of units per transaction  
+- `InvoiceDate` → Date of transaction  
+- `UnitPrice` → Price per unit  
+- `CustomerId` → Unique 5-digit customer ID  
+- `Country` → Customer location  
+
+This analysis replicates the workflow of a **Data Analyst in a retail/tech company**, focusing on **customer insights, revenue patterns, and market behavior**.
 
 ---
 
-## 🚀 Project Summary (one-liner)
-A focused, business-driven sales analysis pipeline on invoice-level data (provided as `sales.xlsx`) delivering actionable insights: data cleaning, EDA, market performance, RFM customer segmentation, and customer retention analysis — all implemented in a production-ready Jupyter notebook.
+## Objectives
+The project is structured into **five main analytical steps**:
+
+1. **Data Preprocessing**
+   - Handling missing values & duplicates  
+   - Standardizing column names  
+   - Managing cancelled invoices (InvoiceNumber starting with `C`)  
+   - Parsing dates and extracting time-based features (month, year, etc.)  
+
+2. **Exploratory Data Analysis (EDA)**
+   - General trends in sales volume & revenue  
+   - Identifying top-selling products  
+   - Highlighting top customers and cancelling customers  
+   - Visualizing seasonality and demand patterns  
+
+3. **Market Analysis**
+   - Ranking countries by sales volume  
+   - Finding markets with high customer base but low revenue  
+   - Visualizing global distribution of Apple’s sales  
+
+4. **Customer Value Segmentation (RFM Analysis)**
+   - Using **Recency, Frequency, Monetary** metrics  
+   - Clustering customers into **7 behavioral groups**  
+   - Extracting insights into VIP customers, churn risks, and regular buyers  
+
+5. **Customer Retention Analysis**
+   - Measuring repeat purchase rate  
+   - Month-to-month retention visualization  
+   - Identifying loyalty trends and growth opportunities  
 
 ---
 
-## 🎯 Why this project matters
-Retail organizations routinely rely on Excel exports. This project shows how to transform raw invoice files into clean, analyzable data and produce business intelligence that supports marketing, sales strategy, and retention programs. It demonstrates practical SQL-free data engineering, robust EDA, customer lifetime insights, and easy-to-interpret visual storytelling — skills hiring managers look for in Data Analysts and BI specialists.
+## Techniques & Tools Used
+- **Data Wrangling & Cleaning** → `pandas`, `numpy`  
+- **Exploratory Data Analysis (EDA)** → grouping, aggregations, pivot tables  
+- **Visualization** → `matplotlib`, `seaborn` (heatmaps, bar charts, time-series plots)  
+- **Customer Segmentation (RFM Model)** → quantile-based classification into customer tiers  
+- **Retention Analysis** → cohort analysis using invoice dates  
+- **Business Insights** → identifying revenue leaks, growth markets, and key customer groups  
 
 ---
 
-## 📦 Dataset (provided)
-File: `sales.xlsx` (included in the repository)
-
-**Columns / Description**
-- `InvoiceNumber` — 6-character invoice id (starts with `C` for cancelled invoices)  
-- `ProductCode` — 5-digit code for the product  
-- `ProductName` — product title  
-- `Quantity` — quantity of product in the invoice row  
-- `InvoiceDate` — invoice creation datetime  
-- `UnitPrice` — unit price of the product  
-- `CustomerId` — 5-digit customer id  
-- `Country` — customer country
-
-> Note: The notebook contains data validation and robust parsing to handle possible inconsistencies in the Excel file.
+## Example Visuals
+The notebook generates various charts, including:  
+- Monthly sales trend with cancellations highlighted  
+- Top 10 best-selling Apple products  
+- Country-wise sales performance (bar and map-style charts)  
+- RFM distribution plots (Recency vs. Frequency vs. Monetary)  
+- Customer retention curves  
 
 ---
 
-## 🧭 Project workflow (5 stages)
-1. **Data preprocessing**  
-   - Load Excel safely; handle corrupt / malformed files.  
-   - Parse datetimes, normalize column names, drop duplicates, handle cancellations (`InvoiceNumber` starting with `C`), and derive `TotalPrice = Quantity * UnitPrice`.  
-
-2. **Exploratory Data Analysis (EDA)**  
-   - Descriptive statistics (sales distribution, price, quantity).  
-   - Key visualizations: revenue over time, top products, top customers, product price distributions, cancellations.  
-
-3. **Market / Geographic study**  
-   - Country-level sales vs. customer counts — identify markets with high customer counts but low revenue (opportunities for up-sell / pricing adjustments).  
-   - Visual maps / bar charts and ratio metrics (Revenue per Customer).  
-
-4. **Customer valuation: RFM segmentation**  
-   - Compute **R**ecency, **F**requency, **M**onetary for each customer.  
-   - Score and cluster customers into 7 business-meaningful segments (VIP, Loyal, At-Risk, New, Occasional, Discount-Seeking, Churned).  
-   - Provide marketing recommendations per segment (campaign suggestions & expected KPIs).
-
-5. **Customer retention analysis**  
-   - Cohort analysis to estimate retention over months after customers’ first purchase.  
-   - Compute percent of customers who make repeat purchases by month; visualize cohort retention heatmap.
-
----
-
-## ✅ Key deliverables (in the notebook)
-- `01_preprocessing.ipynb` (or first notebook cell): robust loading & cleaning of `sales.xlsx`.  
-- EDA charts (time-series revenue, top products/customers).  
-- Market opportunity tables (country revenue vs. unique customers).  
-- RFM build & segmentation (scoring logic + table of segments).  
-- Retention / cohort analysis and visualizations.  
-- A final summary: top 5 business recommendations.
-
----
-
-## 📈 Business impact & insights (examples)
-- Identifies top-10 revenue-driving products and customers for targeted account management.  
-- Detects markets with many customers but low average order value — immediate marketing / pricing interventions.  
-- Segments customers to support tailored campaigns: e.g., “win-back” for At-Risk customers, loyalty offers for VIPs.  
-- Quantifies monthly retention rates to measure customer lifetime growth.
-
----
-
-## 🛠️ Skills & techniques demonstrated
-- Data ingestion and robust Excel parsing (recovering from malformed Excel files).  
-- Time-series aggregation and trend detection.  
-- Grouping, aggregation, pivoting with `pandas`.  
-- Window-like analyses using `groupby` and `rolling` logic.  
-- RFM calculation and rule-based segmentation.  
-- Cohort/retention analysis and heatmap visualization.  
-- Clean, well-documented Jupyter Notebook suitable for review by hiring managers.
-
----
+## Repository Structure
