@@ -70,4 +70,3 @@ The notebook generates various charts, including:
 
 ---
 
-## Repository Structure
